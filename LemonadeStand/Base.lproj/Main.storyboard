@@ -90,6 +90,9 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="180" y="202" width="46" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buyMoreLemonsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2RK-6l-Qbt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpB-8a-NTl">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -99,6 +102,9 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="180" y="240" width="46" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buyMoreIcePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fx4-MZ-XFd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWL-yw-ldX">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -108,6 +114,9 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="306" y="202" width="46" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buyFewerLemonsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7eS-lC-U04"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4e-jW-RNF">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -117,11 +126,13 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="306" y="240" width="46" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buyLessIcePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P26-gN-FHO"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPd-gX-ra9">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="262" y="206" width="42" height="21"/>
@@ -130,7 +141,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLR-CY-tCo">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="262" y="244" width="42" height="21"/>
@@ -171,6 +182,9 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="177" y="351" width="46" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="mixMoreLemonsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2E-64-ssa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6CJ-8e-Sq0">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -180,6 +194,9 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="177" y="389" width="46" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="mixMoreIcePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OXl-S7-E86"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBw-hh-gWf">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -189,15 +206,9 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="306" y="351" width="46" height="30"/>
                                         </variation>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KV8-4F-SHx">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <state key="normal" title="0">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="243" y="389" width="46" height="30"/>
-                                        </variation>
+                                        <connections>
+                                            <action selector="mixFewerLemonsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uhj-F3-sIw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg5-cY-eeK">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -207,6 +218,9 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="306" y="390" width="46" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="mixLessIcePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fqc-DW-Uot"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 4: Sell some Lemonade" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekZ-Wq-dAJ">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -217,15 +231,6 @@
                                             <rect key="frame" x="25" y="466" width="221" height="21"/>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5o-l6-Xt8">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <state key="normal" title="0">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="243" y="351" width="46" height="30"/>
-                                        </variation>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kn-Zj-VQz">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -235,7 +240,28 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="116" y="509" width="168" height="45"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qHW-iD-01Z"/>
+                                        </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8C-J3-2m3">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="262" y="355" width="42" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV6-LL-gdc">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="262" y="390" width="42" height="21"/>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="default">
@@ -259,11 +285,11 @@
                                         <exclude reference="ulN-G4-bYU"/>
                                         <exclude reference="6CJ-8e-Sq0"/>
                                         <exclude reference="YBw-hh-gWf"/>
-                                        <exclude reference="KV8-4F-SHx"/>
                                         <exclude reference="Kg5-cY-eeK"/>
                                         <exclude reference="ekZ-Wq-dAJ"/>
-                                        <exclude reference="U5o-l6-Xt8"/>
                                         <exclude reference="6kn-Zj-VQz"/>
+                                        <exclude reference="x8C-J3-2m3"/>
+                                        <exclude reference="VV6-LL-gdc"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -288,11 +314,11 @@
                                         <include reference="ulN-G4-bYU"/>
                                         <include reference="6CJ-8e-Sq0"/>
                                         <include reference="YBw-hh-gWf"/>
-                                        <include reference="KV8-4F-SHx"/>
                                         <include reference="Kg5-cY-eeK"/>
                                         <include reference="ekZ-Wq-dAJ"/>
-                                        <include reference="U5o-l6-Xt8"/>
                                         <include reference="6kn-Zj-VQz"/>
+                                        <include reference="x8C-J3-2m3"/>
+                                        <include reference="VV6-LL-gdc"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -309,6 +335,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="mixIceCubesLabel" destination="VV6-LL-gdc" id="r77-cC-Rvv"/>
+                        <outlet property="mixLemonsLabel" destination="x8C-J3-2m3" id="6Kj-7T-Zfp"/>
+                        <outlet property="purchaseIceCubesLabel" destination="JLR-CY-tCo" id="DLq-4V-DqJ"/>
+                        <outlet property="purchaseLemonsLabel" destination="WPd-gX-ra9" id="2Zy-cY-f5o"/>
+                        <outlet property="youHaveIceCubesLabel" destination="PXf-zE-DBT" id="3ko-73-uSq"/>
+                        <outlet property="youHaveLemonsLabel" destination="evl-Tl-Rif" id="RqG-ZP-bl3"/>
+                        <outlet property="youHaveMoneyLabel" destination="Efc-Tu-pk1" id="NYV-jH-eeo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
