@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     var money = 0
     var initialLemons = 0
     var iceCubes = 0
+    var buyingLemons = 0
+    var buyingIce = 0
     
     //variables for mixture
     
@@ -48,11 +50,12 @@ class ViewController: UIViewController {
     @IBAction func buyMoreLemonsPressed(sender: UIButton) {
         
         if money < 2 {
-            showAlertWithText(header: "You don't have enough money left :(", message: "Game Over")
+            showAlertWithText(header: "You don't have enough money left :(", message: "Get some ice instead?")
             //I think there needs to be a hard reset function here so that it starts the game again
         } else {
             initialLemons += 1 // the = is important
             money -= 2
+            buyingLemons += 1
             updateMainView()
         }
     }
@@ -64,6 +67,7 @@ class ViewController: UIViewController {
         } else {
             initialLemons -= 1
             money += 2
+            buyingLemons -= 1
         }
         updateMainView()
         }
@@ -74,6 +78,7 @@ class ViewController: UIViewController {
         } else {
             iceCubes += 1
             money -= 1
+            buyingIce += 1
         }
         updateMainView()
     }
@@ -84,6 +89,7 @@ class ViewController: UIViewController {
         } else {
             iceCubes -= 1
             money += 1
+            buyingIce -= 1
         }
         updateMainView()
     }
@@ -147,6 +153,8 @@ class ViewController: UIViewController {
         self.youHaveMoneyLabel.text = "$" + "\(money)"
         self.youHaveLemonsLabel.text = "\(initialLemons) lemons" //need to decide what variable will go in here
         self.youHaveIceCubesLabel.text = "\(iceCubes) ice cubes" // need to decide what variable wil go in here
+        self.purchaseIceCubesLabel.text = "\(buyingIce)"
+        self.purchaseLemonsLabel.text = "\(buyingLemons)"
         self.mixLemonsLabel.text = "\(lemonsInMix)"
         self.mixIceCubesLabel.text = "\(iceInMix)"
     }
@@ -157,14 +165,19 @@ class ViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func initialSetUp () { //also needs to reset everything else
+    func initialSetUp () { //also needs to reset everything else - like all the labels
         money = 10
         initialLemons = 1
         iceCubes = 1
-        self.youHaveMoneyLabel.text = "$" + "\(money)"
-        self.youHaveLemonsLabel.text = "\(initialLemons) lemons" //need to decide what variable will go in here
-        self.youHaveIceCubesLabel.text = "\(iceCubes) ice cubes" // need to decide what variable wil go in here
-        //add more properties here to change the labels in the mixture once these have been set up
+        buyingLemons = 0
+        buyingIce = 0
+        iceInMix = 0
+        lemonsInMix = 0
+        updateMainView()
+//        self.youHaveMoneyLabel.text = "$" + "\(money)"
+//        self.youHaveLemonsLabel.text = "\(initialLemons) lemons" //need to decide what variable will go in here
+//        self.youHaveIceCubesLabel.text = "\(iceCubes) ice cubes" // need to decide what variable wil go in here
+//        //add more properties here to change the labels in the mixture once these have been set up
     }
     
 }
