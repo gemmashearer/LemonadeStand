@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF87C0831B2AE6450068FBB6 /* Lemonade.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87C0821B2AE6450068FBB6 /* Lemonade.swift */; };
 		CFE43D481B284732002DE214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE43D471B284732002DE214 /* AppDelegate.swift */; };
 		CFE43D4A1B284732002DE214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE43D491B284732002DE214 /* ViewController.swift */; };
 		CFE43D4D1B284732002DE214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE43D4B1B284732002DE214 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF87C0821B2AE6450068FBB6 /* Lemonade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lemonade.swift; sourceTree = "<group>"; };
 		CFE43D421B284732002DE214 /* LemonadeStand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonadeStand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE43D461B284732002DE214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFE43D471B284732002DE214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				CFE43D471B284732002DE214 /* AppDelegate.swift */,
 				CFE43D491B284732002DE214 /* ViewController.swift */,
+				CF87C0821B2AE6450068FBB6 /* Lemonade.swift */,
 				CFE43D4B1B284732002DE214 /* Main.storyboard */,
 				CFE43D4E1B284732002DE214 /* Images.xcassets */,
 				CFE43D501B284732002DE214 /* LaunchScreen.xib */,
@@ -214,6 +217,7 @@
 			files = (
 				CFE43D4A1B284732002DE214 /* ViewController.swift in Sources */,
 				CFE43D481B284732002DE214 /* AppDelegate.swift in Sources */,
+				CF87C0831B2AE6450068FBB6 /* Lemonade.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +415,7 @@
 				CFE43D631B284732002DE214 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFE43D641B284732002DE214 /* Build configuration list for PBXNativeTarget "LemonadeStandTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				CFE43D661B284732002DE214 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

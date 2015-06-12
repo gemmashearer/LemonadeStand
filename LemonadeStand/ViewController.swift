@@ -20,19 +20,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var mixLemonsLabel: UILabel!
     @IBOutlet weak var mixIceCubesLabel: UILabel!
     
-    //Connections for buttons are under didReceiveMemoryWarning
-    
-    //declaring everything that the player has at the start
     var money = 0
     var initialLemons = 0
     var iceCubes = 0
     var buyingLemons = 0
     var buyingIce = 0
-    
-    //variables for mixture
-    
     var lemonsInMix = 0
     var iceInMix = 0
+    var lemonade = Lemonade()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +45,6 @@ class ViewController: UIViewController {
     //functions for when buttons are pressed
 
     @IBAction func buyMoreLemonsPressed(sender: UIButton) {
-        
         if money < 2 {
             showAlertWithText(header: "You don't have enough money left :(", message: "Get some ice instead?")
             //I think there needs to be a hard reset function here so that it starts the game again
@@ -56,8 +52,8 @@ class ViewController: UIViewController {
             initialLemons += 1 // the = is important
             money -= 2
             buyingLemons += 1
-            updateMainView()
         }
+        updateMainView()
     }
     
     @IBAction func buyFewerLemonsPressed(sender: UIButton) {
@@ -94,6 +90,7 @@ class ViewController: UIViewController {
         updateMainView()
     }
     
+    //I'm not sure when these are supposed to update - is it when the button is pressed and the mixture is generated or what?
     
     @IBAction func mixMoreLemonsPressed(sender: UIButton) {
         //logic lemons at the top - 1
@@ -143,16 +140,19 @@ class ViewController: UIViewController {
     
     
     @IBAction func startButtonPressed(sender: UIButton) {
-        //reset to the default values - this bit works
-        initialSetUp()
+        //reset to the default values - this bit works but it can't stay here ultimately because this needs to generate the ratio of lemons, not reset everything
+        
+        //this code works but I don't think I want to call it here, I think that this would be better as a function because it can then
+        availableLemonade()
+        println("\(lemonade.acidity)")
     }
     
     //function that updates the labels: needs to be called each time a button is pressed
     
     func updateMainView () {
         self.youHaveMoneyLabel.text = "$" + "\(money)"
-        self.youHaveLemonsLabel.text = "\(initialLemons) lemons" //need to decide what variable will go in here
-        self.youHaveIceCubesLabel.text = "\(iceCubes) ice cubes" // need to decide what variable wil go in here
+        self.youHaveLemonsLabel.text = "\(initialLemons) lemons"
+        self.youHaveIceCubesLabel.text = "\(iceCubes) ice cubes"
         self.purchaseIceCubesLabel.text = "\(buyingIce)"
         self.purchaseLemonsLabel.text = "\(buyingLemons)"
         self.mixLemonsLabel.text = "\(lemonsInMix)"
@@ -174,10 +174,18 @@ class ViewController: UIViewController {
         iceInMix = 0
         lemonsInMix = 0
         updateMainView()
-//        self.youHaveMoneyLabel.text = "$" + "\(money)"
-//        self.youHaveLemonsLabel.text = "\(initialLemons) lemons" //need to decide what variable will go in here
-//        self.youHaveIceCubesLabel.text = "\(iceCubes) ice cubes" // need to decide what variable wil go in here
-//        //add more properties here to change the labels in the mixture once these have been set up
+    }
+    
+    //this isn't going to work in the way that I want it to yet but it has the right logic
+    func availableLemonade () {
+        var lemonadeRatio = lemonsInMix / iceInMix //this is not working because they need to be converted into a double. I'll do that later
+        if lemonadeRatio < 1 {
+            lemonade.acidity = 1
+        } else if lemonadeRatio == 1 {
+            lemonade.acidity = 2
+        } else if lemonadeRatio > 1 {
+            lemonade.acidity = 3
+        }
     }
     
 }
