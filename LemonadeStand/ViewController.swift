@@ -75,6 +75,7 @@ class ViewController: UIViewController {
             iceCubes += 1
             money -= 1
             buyingIce += 1
+            
         }
         updateMainView()
     }
@@ -98,6 +99,7 @@ class ViewController: UIViewController {
         if initialLemons >= 1 {
             initialLemons -= 1
             lemonsInMix += 1
+            
         } else {
             showAlertWithText(header: "You don't have enough money left :(", message: "Game Over")
         }
@@ -121,6 +123,7 @@ class ViewController: UIViewController {
         if iceCubes >= 1 {
             iceCubes -= 1
             iceInMix += 1
+            
         } else {
             showAlertWithText(header: "Invalid action", message: "You don't have any ice left")
         }
@@ -143,8 +146,9 @@ class ViewController: UIViewController {
         //reset to the default values - this bit works but it can't stay here ultimately because this needs to generate the ratio of lemons, not reset everything
         
         //this code works but I don't think I want to call it here, I think that this would be better as a function because it can then
-        availableLemonade()
-        println("\(lemonade.acidity)")
+       
+            availableLemonade()
+        
     }
     
     //function that updates the labels: needs to be called each time a button is pressed
@@ -173,19 +177,24 @@ class ViewController: UIViewController {
         buyingIce = 0
         iceInMix = 0
         lemonsInMix = 0
+        lemonade.acidity = 0
         updateMainView()
     }
     
     //this isn't going to work in the way that I want it to yet but it has the right logic
     func availableLemonade () {
-        var lemonadeRatio = lemonsInMix / iceInMix //this is not working because they need to be converted into a double. I'll do that later
+        let lemonadeRatio:Double = Double(lemonsInMix) / Double(iceInMix) //this is not working because
+        
         if lemonadeRatio < 1 {
-            lemonade.acidity = 1
+            lemonade.acidity += 1 //this is the icy lemonade
         } else if lemonadeRatio == 1 {
-            lemonade.acidity = 2
+            lemonade.acidity += 2 // this is the equal ice and lemon
         } else if lemonadeRatio > 1 {
-            lemonade.acidity = 3
+            lemonade.acidity += 3 // this is the acidic lemonade
         }
+        showAlertWithText(header: "\(lemonade.acidity)", message: "\(iceInMix)")
+        
+        initialSetUp()
     }
     
 }
