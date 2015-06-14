@@ -29,6 +29,9 @@ class ViewController: UIViewController {
     var iceInMix = 0
     var lemonade = Lemonade()
     
+    //array to contain the customers
+    var customers:[Customer] = []
+
     
     
     override func viewDidLoad() {
@@ -143,12 +146,12 @@ class ViewController: UIViewController {
     
     
     @IBAction func startButtonPressed(sender: UIButton) {
-        //reset to the default values - this bit works but it can't stay here ultimately because this needs to generate the ratio of lemons, not reset everything
         
-        //this code works but I don't think I want to call it here, I think that this would be better as a function because it can then
-       
             availableLemonade()
+            //need a function that will generate the list of customers and give all of them a preference
+            //need a function (like a lemonade controller) that will evaluate preferences vs lemonade.acidity and see if there is a match
         
+        createCustomers()
     }
     
     //function that updates the labels: needs to be called each time a button is pressed
@@ -178,13 +181,15 @@ class ViewController: UIViewController {
         iceInMix = 0
         lemonsInMix = 0
         lemonade.acidity = 0
+        // makes it reset all the labels
         updateMainView()
     }
     
     //this isn't going to work in the way that I want it to yet but it has the right logic
     func availableLemonade () {
+        // needs to be converted into a double
+        //the problem is right now that this is a local constant that isn't available anywhere else. I will need to do something about this later
         let lemonadeRatio:Double = Double(lemonsInMix) / Double(iceInMix) //this is not working because
-        
         if lemonadeRatio < 1 {
             lemonade.acidity += 1 //this is the icy lemonade
         } else if lemonadeRatio == 1 {
@@ -192,9 +197,24 @@ class ViewController: UIViewController {
         } else if lemonadeRatio > 1 {
             lemonade.acidity += 3 // this is the acidic lemonade
         }
+        
+        //using alerts instead of println()
         showAlertWithText(header: "\(lemonade.acidity)", message: "\(iceInMix)")
         
+        //resets it back to the default values
         initialSetUp()
+    }
+    
+    //what this function should do is create < 10 instances of Customer and put them in the customers array
+    //I can't decide whether this is doing the right thing or not! the array doesn't appear to be emptying after each press, I will need to create some code to do that
+    func createCustomers () {
+        var randomNumberOfCustomers = Int(arc4random_uniform(UInt32(10)))
+        for var todaysCustomers = 0; todaysCustomers <= randomNumberOfCustomers; ++todaysCustomers {
+            var customer = Customer()
+            //can I then call the instance function to generate the preference
+            customers.append(customer)
+            println("\(customers.count)")
+        }
     }
     
 }
